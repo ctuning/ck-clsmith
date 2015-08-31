@@ -41,6 +41,7 @@
         "run_cmd_out2": "stdout1.log", 
         "run_correctness_output_files": [], 
         "run_input_files": [
+          "CLSmith.h"
         ], 
         "run_output_files": [
           "tmp-output.tmp", 
