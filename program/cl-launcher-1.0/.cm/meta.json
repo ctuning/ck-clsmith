@@ -36,7 +36,7 @@
       "run_time": {
         "post_process_cmds": [
         ], 
-        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p 0 -d 0", 
+        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p 0 -d 0 -i $#src_path#$", 
         "run_cmd_out1": "stdout.log", 
         "run_cmd_out2": "stdout1.log", 
         "run_correctness_output_files": [], 

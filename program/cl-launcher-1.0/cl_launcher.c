@@ -57,6 +57,7 @@ size_t binary_size = 0;
 int device_index = 0;
 int platform_index = 0;
 char* device_name_given = "";
+char* include_path = "."; //FGG
 bool debug_build = false;
 bool disable_opts = false;
 bool disable_fake = false;
@@ -114,6 +115,7 @@ void print_help() {
   printf("  -d IDX  --device_idx IDX                  Target device\n");
   printf("\n");
   printf("Optional flags are:\n");
+  printf("  -i PATH --include_path PATH               Include path for kernels (. by default)\n"); //FGG
   printf("  -b N    --binary N                        Compiles the kernel to binary, allocating N bytes\n");
   printf("  -l N    --locals N                        A string with comma-separated values representing the number of work-units per group per dimension\n");
   printf("  -g N    --groups N                        Same as -l, but representing the total number of work-units per dimension\n");
@@ -485,7 +487,7 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
 
   // Add optimisation to options later.
   char* options = (char*)malloc(sizeof(char)*256);
-  sprintf(options, "-w -I.");
+  sprintf(options, "-w -I%s", include_path);
   if (disable_opts)
     sprintf(options, "%s -cl-opt-disable", options);
   if (disable_group)
@@ -783,6 +785,10 @@ int parse_arg(char* arg, char* val) {
   }
   if (!strcmp(arg, "-n") || !strcmp(arg, "--name")) {
     device_name_given = val;
+    return 3;
+  }
+  if (!strcmp(arg, "-i") || !strcmp(arg, "--include_path")) { //FGG
+    include_path = val;
     return 3;
   }
   if (!strcmp(arg, "--atomics")) {
