@@ -1,0 +1,10 @@
+{
+ "pipeline_update":{
+  "cpu_freq":"max",
+  "gpu_freq":"max",
+  "env":{
+    "PLATFORM_ID":"0",
+    "DEVICE_ID":"1"
+   }
+ }
+}

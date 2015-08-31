@@ -1,0 +1,1 @@
+ck pipeline program @_setup_tool_clsmith_pipeline.json @_setup_tool_clsmith_pipeline_tmp.json
