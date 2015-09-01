@@ -206,7 +206,7 @@ int main(int argc, char **argv) {
 
 //FGG - exposing various params to CK JSON
 #ifdef XOPENME
-  xopenme_init(0,3);
+  xopenme_init(0,4);
 #endif
 
 #ifdef _MSC_VER
@@ -540,6 +540,12 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
   build_in_progress = true;
 #endif  
   err = clBuildProgram(program, 0, NULL, options, NULL, NULL);
+
+//FGG
+#ifdef XOPENME
+  xopenme_add_var_s(3, (char*) "  \"opencl_options\":\"%s\"", options);
+#endif
+
 #ifdef _MSC_VER  
   build_in_progress = false;
 #endif  
@@ -828,6 +834,9 @@ int parse_arg(char* arg, char* val) {
   }
   if (!strcmp(arg, "-i") || !strcmp(arg, "--include_path")) { //FGG
     include_path = val;
+    for (int i=0; i<strlen(include_path); i++)
+      if (include_path[i]=='\\') include_path[i]='/';
+
     return 3;
   }
   if (!strcmp(arg, "--atomics")) {

@@ -39,9 +39,9 @@
         "post_process_cmds": [
           "python $#src_path_local#$ck_postprocess.py" 
         ],
-        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<PLATFORM_ID>>$ -d $<<DEVICE_ID>>$ -i $#src_path#$", 
+        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<PLATFORM_ID>>$ -d $<<DEVICE_ID>>$ -i $#src_path#$ ---debug", 
         "run_cmd_out1": "stdout.log", 
-        "run_cmd_out2": "stdout1.log", 
+        "run_cmd_out2": "stderr.log", 
         "run_correctness_output_files": [], 
         "run_input_files": [
           "CLSmith.h"

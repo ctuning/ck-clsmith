@@ -4,8 +4,10 @@
   "gpu_freq":"max",
   "env":{
     "PLATFORM_ID":"0",
-    "DEVICE_ID":"1"
+    "DEVICE_ID":"0"
    },
-  "repetitions":1
- }
+  "compile_timeout":60,
+  "run_timeout":60
+ },
+ "repetitions":1
 }
