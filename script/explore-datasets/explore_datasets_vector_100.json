@@ -19,8 +19,10 @@
      "compiler_vars": {
      },
 
+     "skip_calibration":"yes",
 
-     "skip_calibration":"yes"
+     "compile_timeout":60,
+     "run_timeout":60
 
    },
 
@@ -36,6 +38,8 @@
 
   "record_params": {
     "search_point_by_features":"yes"
-  }
+  },
+
+  "record_dict":{"subview_uoa":"a9143fb9593da7f9"}
 
 }

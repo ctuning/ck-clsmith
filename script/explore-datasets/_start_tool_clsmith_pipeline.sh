@@ -1,1 +1,0 @@
-ck run pipeline:program pipeline_from_file=_setup_tool_clsmith_pipeline_tmp.json @_start_tool_clsmith_pipeline.json

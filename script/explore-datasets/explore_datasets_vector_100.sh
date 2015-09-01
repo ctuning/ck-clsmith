@@ -1,1 +1,0 @@
-ck autotune pipeline:program pipeline_from_file=_setup_tool_clsmith_pipeline_tmp.json @explore_datasets_vector_100.json

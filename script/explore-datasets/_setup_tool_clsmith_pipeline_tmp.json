@@ -1,0 +1,818 @@
+{
+  "characteristics": {}, 
+  "choices": {
+    "cmd_key": "default", 
+    "compile_only_once": "yes", 
+    "compile_type": "dynamic", 
+    "cpu_freq": "max", 
+    "data_uoa": "tool-cl-launcher-1.0", 
+    "dataset_file": "00001.cl", 
+    "dataset_uoa": "clsmith-basic-100", 
+    "device_id": "", 
+    "energy": "no", 
+    "env": {
+      "DEVICE_ID": "1", 
+      "PLATFORM_ID": "0"
+    }, 
+    "gpu_freq": "max", 
+    "host_os": "windows-64", 
+    "module_uoa": "b0ac08fe1d3c2615", 
+    "no_state_check": "yes", 
+    "target_os": "windows-64", 
+    "target_os_bits": "64"
+  }, 
+  "choices_desc": {
+    "##compiler_env_uoa": {
+      "choices": [
+        "289842d618a4e54a", 
+        "924e05b4e11f9dcc", 
+        "94e0f4653b0fe9fa", 
+        "ac64c238d32a89b3", 
+        "b90ce949dca060c0", 
+        "ba51adfd437ab8de", 
+        "d1cad28a354152b3"
+      ], 
+      "has_choice": "yes", 
+      "sort": 2000, 
+      "type": "uoa"
+    }, 
+    "##compiler_flags#base_opt": {
+      "choice": [
+        "-O3", 
+        "-fast", 
+        "-O0", 
+        "-O1", 
+        "-O2", 
+        "-Os"
+      ], 
+      "default": "", 
+      "desc": "base compiler flag", 
+      "sort": 10000, 
+      "tags": [
+        "base", 
+        "basic", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##compiler_flags#global_loop_unrolling": {
+      "can_omit": "yes", 
+      "default": "", 
+      "desc": "compiler flag: -Qunroll", 
+      "explore_prefix": "-Qunroll", 
+      "explore_start": 1, 
+      "explore_step": 1, 
+      "explore_stop": 32, 
+      "sort": 10100, 
+      "tags": [
+        "basic", 
+        "optimization"
+      ], 
+      "type": "integer"
+    }, 
+    "##compiler_flags#openmp": {
+      "can_omit": "yes", 
+      "choice": [
+        "-openmp", 
+        ""
+      ], 
+      "default": "", 
+      "desc": "compiler flag: openmp", 
+      "sort": 10001, 
+      "tags": [
+        "basic", 
+        "openmp", 
+        "optimization"
+      ], 
+      "type": "text"
+    }, 
+    "##dataset_file": {
+      "choices": [
+        "00001.cl", 
+        "00002.cl", 
+        "00003.cl", 
+        "00004.cl", 
+        "00005.cl", 
+        "00007.cl", 
+        "00009.cl", 
+        "00011.cl", 
+        "00013.cl", 
+        "00014.cl", 
+        "00015.cl", 
+        "00016.cl", 
+        "00017.cl", 
+        "00018.cl", 
+        "00019.cl", 
+        "00020.cl", 
+        "00021.cl", 
+        "00022.cl", 
+        "00023.cl", 
+        "00024.cl", 
+        "00025.cl", 
+        "00026.cl", 
+        "00027.cl", 
+        "00028.cl", 
+        "00029.cl", 
+        "00031.cl", 
+        "00032.cl", 
+        "00033.cl", 
+        "00034.cl", 
+        "00035.cl", 
+        "00036.cl", 
+        "00037.cl", 
+        "00038.cl", 
+        "00040.cl", 
+        "00041.cl", 
+        "00042.cl", 
+        "00043.cl", 
+        "00044.cl", 
+        "00045.cl", 
+        "00047.cl", 
+        "00048.cl", 
+        "00049.cl", 
+        "00051.cl", 
+        "00052.cl", 
+        "00053.cl", 
+        "00054.cl", 
+        "00055.cl", 
+        "00056.cl", 
+        "00057.cl", 
+        "00058.cl", 
+        "00059.cl", 
+        "00061.cl", 
+        "00062.cl", 
+        "00063.cl", 
+        "00064.cl", 
+        "00065.cl", 
+        "00066.cl", 
+        "00067.cl", 
+        "00068.cl", 
+        "00069.cl", 
+        "00070.cl", 
+        "00072.cl", 
+        "00074.cl", 
+        "00076.cl", 
+        "00077.cl", 
+        "00078.cl", 
+        "00079.cl", 
+        "00080.cl", 
+        "00081.cl", 
+        "00082.cl", 
+        "00083.cl", 
+        "00084.cl", 
+        "00085.cl", 
+        "00086.cl", 
+        "00087.cl", 
+        "00088.cl", 
+        "00089.cl", 
+        "00090.cl", 
+        "00091.cl", 
+        "00093.cl", 
+        "00094.cl", 
+        "00096.cl", 
+        "00097.cl", 
+        "00099.cl", 
+        "00100.cl", 
+        "00101.cl", 
+        "00102.cl", 
+        "00103.cl", 
+        "00104.cl", 
+        "00105.cl", 
+        "00106.cl", 
+        "00107.cl", 
+        "00110.cl", 
+        "00111.cl", 
+        "00112.cl", 
+        "00114.cl", 
+        "00115.cl", 
+        "00116.cl", 
+        "00117.cl", 
+        "00119.cl"
+      ], 
+      "has_choice": "yes", 
+      "sort": 1100, 
+      "tags": [
+        "setup"
+      ], 
+      "type": "text"
+    }, 
+    "##dataset_uoa": {
+      "choices": [
+        "3afb9752971d2722", 
+        "6b15504dc094ff6c"
+      ], 
+      "has_choice": "yes", 
+      "sort": 1200, 
+      "tags": [
+        "setup", 
+        "dataset"
+      ], 
+      "type": "uoa"
+    }, 
+    "##env#DEVICE_ID": {
+      "default": 0, 
+      "desc": "OpenCL device ID", 
+      "explore_start": 0, 
+      "explore_step": 10, 
+      "explore_stop": 1, 
+      "sort": 1, 
+      "type": "integer"
+    }, 
+    "##env#PLATFORM_ID": {
+      "default": 0, 
+      "desc": "OpenCL platform ID", 
+      "explore_start": 0, 
+      "explore_step": 10, 
+      "explore_stop": 1, 
+      "sort": 1, 
+      "type": "integer"
+    }
+  }, 
+  "dependencies": {
+    "compiler": {
+      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\289842d618a4e54a\\env.bat\n", 
+      "build_dir_name": "icc", 
+      "choices": [
+        "289842d618a4e54a", 
+        "924e05b4e11f9dcc", 
+        "94e0f4653b0fe9fa", 
+        "ac64c238d32a89b3", 
+        "b90ce949dca060c0", 
+        "ba51adfd437ab8de", 
+        "d1cad28a354152b3"
+      ], 
+      "cus": {
+        "build-dir-name": "icc", 
+        "build_dir_name": "icc", 
+        "env_prefix": "CK_ENV_COMPILER_ICC", 
+        "extra_dir": "", 
+        "languages": [
+          "C", 
+          "CPP", 
+          "F77", 
+          "F90", 
+          "F95"
+        ], 
+        "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
+        "retarget": "", 
+        "skip_add_to_bin": "yes", 
+        "skip_add_to_ld_path": "yes", 
+        "skip_add_to_path": "yes", 
+        "tool_prefix": "", 
+        "version": "2015", 
+        "version_int": 2015
+      }, 
+      "dict": {
+        "customize": {
+          "build-dir-name": "icc", 
+          "build_dir_name": "icc", 
+          "env_prefix": "CK_ENV_COMPILER_ICC", 
+          "extra_dir": "", 
+          "languages": [
+            "C", 
+            "CPP", 
+            "F77", 
+            "F90", 
+            "F95"
+          ], 
+          "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
+          "retarget": "", 
+          "skip_add_to_bin": "yes", 
+          "skip_add_to_ld_path": "yes", 
+          "skip_add_to_path": "yes", 
+          "tool_prefix": "", 
+          "version": "2015", 
+          "version_int": 2015
+        }, 
+        "deps": {
+          "compiler_mcl": {
+            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\924e05b4e11f9dcc\\env.bat\n", 
+            "build_dir_name": "mcl", 
+            "dict": {
+              "customize": {
+                "add_win_sdk_path": "yes", 
+                "build-dir-name": "mcl", 
+                "build_dir_name": "mcl", 
+                "env_prefix": "CK_ENV_COMPILER_MVSC", 
+                "extra_dir": "", 
+                "input_path_example": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC", 
+                "languages": [
+                  "C", 
+                  "CPP"
+                ], 
+                "path_install": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC", 
+                "retarget": "", 
+                "skip_add_to_bin": "yes", 
+                "skip_add_to_ld_path": "yes", 
+                "skip_add_to_path": "yes", 
+                "tool_prefix": "", 
+                "version": "18.00", 
+                "version_int": 1800
+              }, 
+              "deps": {}, 
+              "env": {
+                "CK_AR": "lib", 
+                "CK_ASM_EXT": ".asm", 
+                "CK_CC": "cl", 
+                "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
+                "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
+                "CK_COMPILER_FLAG_OPENMP": "/openmp", 
+                "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
+                "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
+                "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
+                "CK_CXX": "cl", 
+                "CK_DLL_EXT": ".dll", 
+                "CK_EXE_EXT": ".exe", 
+                "CK_FLAGS_CREATE_ASM": "/Fa /c", 
+                "CK_FLAGS_CREATE_OBJ": "/c", 
+                "CK_FLAGS_DLL": "/MT /DWin /LD", 
+                "CK_FLAGS_DLL_EXTRA": "/link /dll", 
+                "CK_FLAGS_DYNAMIC_BIN": "/MD", 
+                "CK_FLAGS_OUTPUT": "/Fe", 
+                "CK_FLAGS_STATIC_BIN": "/MT", 
+                "CK_FLAGS_STATIC_LIB": "/MD", 
+                "CK_FLAG_PREFIX_INCLUDE": "/I", 
+                "CK_FLAG_PREFIX_VAR": "/D", 
+                "CK_LB": "lib", 
+                "CK_LB_OUTPUT": "/OUT:", 
+                "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
+                "CK_LD_FLAGS_EXTRA": "", 
+                "CK_LIB_EXT": ".lib", 
+                "CK_MAKE": "nmake", 
+                "CK_OBJDUMP": "dumpbin /disasm", 
+                "CK_OBJ_EXT": ".obj"
+              }, 
+              "env_script": "env.bat", 
+              "setup": {
+                "host_os_uoa": "7a95e0754c37610a", 
+                "target_os_bits": "64", 
+                "target_os_uoa": "7a95e0754c37610a", 
+                "version": "18.00"
+              }, 
+              "soft_uoa": "a4c8d6c8e946c49f", 
+              "tags": [
+                "64bits", 
+                "compiler", 
+                "host-os-windows-64", 
+                "lang-c", 
+                "lang-cpp", 
+                "mcl", 
+                "target-os-windows-64", 
+                "v18", 
+                "v18.00"
+              ]
+            }, 
+            "local": "yes", 
+            "num_entries": 1, 
+            "tags": "compiler,mcl,v18.00", 
+            "uoa": "924e05b4e11f9dcc", 
+            "ver": "18.00"
+          }
+        }, 
+        "env": {
+          "CK_AR": "lib", 
+          "CK_ASM_EXT": ".asm", 
+          "CK_CC": "icl", 
+          "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
+          "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
+          "CK_COMPILER_FLAG_OPENMP": "/openmp", 
+          "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
+          "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
+          "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
+          "CK_CSTD99": "/Qstd=c99", 
+          "CK_CXX": "icl", 
+          "CK_DLL_EXT": ".dll", 
+          "CK_EXE_EXT": ".exe", 
+          "CK_EXTRA_LIB_DL": "", 
+          "CK_EXTRA_LIB_M": "", 
+          "CK_F90": "ifort /fpp", 
+          "CK_F95": "ifort /fpp", 
+          "CK_FC": "ifort /fpp", 
+          "CK_FLAGS_CREATE_ASM": "/Fa /c", 
+          "CK_FLAGS_CREATE_OBJ": "/c", 
+          "CK_FLAGS_DLL": "/MT /DWin /LD /FIwindows.h", 
+          "CK_FLAGS_DLL_EXTRA": "/link /dll", 
+          "CK_FLAGS_DYNAMIC_BIN": "/MD", 
+          "CK_FLAGS_OUTPUT": "/Fe", 
+          "CK_FLAGS_STATIC_BIN": "/MT", 
+          "CK_FLAGS_STATIC_LIB": "/MD", 
+          "CK_FLAG_PREFIX_INCLUDE": "/I", 
+          "CK_FLAG_PREFIX_VAR": "/D", 
+          "CK_LB": "lib", 
+          "CK_LB_OUTPUT": "/OUT:", 
+          "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
+          "CK_LD_FLAGS_EXTRA": "bufferoverflowU.lib", 
+          "CK_LIB_EXT": ".lib", 
+          "CK_MAKE": "nmake", 
+          "CK_OBJDUMP": "dumpbin /disasm", 
+          "CK_OBJ_EXT": ".obj"
+        }, 
+        "env_script": "env.bat", 
+        "package_uoa": "8ec292a541719523", 
+        "setup": {
+          "deps_compiler_mcl": "924e05b4e11f9dcc", 
+          "host_os_uoa": "7a95e0754c37610a", 
+          "target_os_bits": "64", 
+          "target_os_uoa": "7a95e0754c37610a", 
+          "version": "2015"
+        }, 
+        "soft_uoa": "f0e7b534fc84d18a", 
+        "tags": [
+          "64bits", 
+          "compiler", 
+          "host-os-windows-64", 
+          "icc", 
+          "lang-c", 
+          "lang-cpp", 
+          "lang-f77", 
+          "lang-f90", 
+          "lang-f95", 
+          "target-os-windows-64", 
+          "v2015"
+        ]
+      }, 
+      "local": "yes", 
+      "num_entries": 1, 
+      "sort": 10, 
+      "tags": "compiler,lang-c", 
+      "uoa": "289842d618a4e54a", 
+      "ver": "2015"
+    }, 
+    "lib.xopenme": {
+      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\919ab8de42d5a9a0\\env.bat\n", 
+      "choices": [
+        "919ab8de42d5a9a0"
+      ], 
+      "cus": {
+        "add_include_path": "yes", 
+        "dynamic_lib": "librtlxopenme.dll", 
+        "env_prefix": "CK_ENV_LIB_RTL_XOPENME", 
+        "extra_dir": "", 
+        "include_name": "xopenme.h", 
+        "path_include": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\include", 
+        "path_install": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64", 
+        "path_lib": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\lib", 
+        "skip_add_to_bin": "yes", 
+        "skip_add_to_path": "yes", 
+        "static_lib": "librtlxopenme.lib", 
+        "version": "0.3", 
+        "version_int": 3
+      }, 
+      "dict": {
+        "customize": {
+          "add_include_path": "yes", 
+          "dynamic_lib": "librtlxopenme.dll", 
+          "env_prefix": "CK_ENV_LIB_RTL_XOPENME", 
+          "extra_dir": "", 
+          "include_name": "xopenme.h", 
+          "path_include": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\include", 
+          "path_install": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64", 
+          "path_lib": "D:\\!FGG\\Installations\\lib-rtl-xopenme-0.3-icc-2015-windows-64\\lib", 
+          "skip_add_to_bin": "yes", 
+          "skip_add_to_path": "yes", 
+          "static_lib": "librtlxopenme.lib", 
+          "version": "0.3", 
+          "version_int": 3
+        }, 
+        "deps": {
+          "compiler": {
+            "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\289842d618a4e54a\\env.bat\n", 
+            "build_dir_name": "icc", 
+            "choices": [
+              "289842d618a4e54a", 
+              "924e05b4e11f9dcc", 
+              "94e0f4653b0fe9fa", 
+              "ac64c238d32a89b3", 
+              "b90ce949dca060c0", 
+              "ba51adfd437ab8de", 
+              "d1cad28a354152b3"
+            ], 
+            "cus": {
+              "build-dir-name": "icc", 
+              "build_dir_name": "icc", 
+              "env_prefix": "CK_ENV_COMPILER_ICC", 
+              "extra_dir": "", 
+              "languages": [
+                "C", 
+                "CPP", 
+                "F77", 
+                "F90", 
+                "F95"
+              ], 
+              "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
+              "retarget": "", 
+              "skip_add_to_bin": "yes", 
+              "skip_add_to_ld_path": "yes", 
+              "skip_add_to_path": "yes", 
+              "tool_prefix": "", 
+              "version": "2015", 
+              "version_int": 2015
+            }, 
+            "dict": {
+              "customize": {
+                "build-dir-name": "icc", 
+                "build_dir_name": "icc", 
+                "env_prefix": "CK_ENV_COMPILER_ICC", 
+                "extra_dir": "", 
+                "languages": [
+                  "C", 
+                  "CPP", 
+                  "F77", 
+                  "F90", 
+                  "F95"
+                ], 
+                "path_install": "C:\\Program Files (x86)\\Intel\\Composer XE 2015", 
+                "retarget": "", 
+                "skip_add_to_bin": "yes", 
+                "skip_add_to_ld_path": "yes", 
+                "skip_add_to_path": "yes", 
+                "tool_prefix": "", 
+                "version": "2015", 
+                "version_int": 2015
+              }, 
+              "deps": {
+                "compiler_mcl": {
+                  "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\924e05b4e11f9dcc\\env.bat\n", 
+                  "build_dir_name": "mcl", 
+                  "dict": {
+                    "customize": {
+                      "add_win_sdk_path": "yes", 
+                      "build-dir-name": "mcl", 
+                      "build_dir_name": "mcl", 
+                      "env_prefix": "CK_ENV_COMPILER_MVSC", 
+                      "extra_dir": "", 
+                      "input_path_example": "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\VC", 
+                      "languages": [
+                        "C", 
+                        "CPP"
+                      ], 
+                      "path_install": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC", 
+                      "retarget": "", 
+                      "skip_add_to_bin": "yes", 
+                      "skip_add_to_ld_path": "yes", 
+                      "skip_add_to_path": "yes", 
+                      "tool_prefix": "", 
+                      "version": "18.00", 
+                      "version_int": 1800
+                    }, 
+                    "deps": {}, 
+                    "env": {
+                      "CK_AR": "lib", 
+                      "CK_ASM_EXT": ".asm", 
+                      "CK_CC": "cl", 
+                      "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
+                      "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
+                      "CK_COMPILER_FLAG_OPENMP": "/openmp", 
+                      "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
+                      "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
+                      "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
+                      "CK_CXX": "cl", 
+                      "CK_DLL_EXT": ".dll", 
+                      "CK_EXE_EXT": ".exe", 
+                      "CK_FLAGS_CREATE_ASM": "/Fa /c", 
+                      "CK_FLAGS_CREATE_OBJ": "/c", 
+                      "CK_FLAGS_DLL": "/MT /DWin /LD", 
+                      "CK_FLAGS_DLL_EXTRA": "/link /dll", 
+                      "CK_FLAGS_DYNAMIC_BIN": "/MD", 
+                      "CK_FLAGS_OUTPUT": "/Fe", 
+                      "CK_FLAGS_STATIC_BIN": "/MT", 
+                      "CK_FLAGS_STATIC_LIB": "/MD", 
+                      "CK_FLAG_PREFIX_INCLUDE": "/I", 
+                      "CK_FLAG_PREFIX_VAR": "/D", 
+                      "CK_LB": "lib", 
+                      "CK_LB_OUTPUT": "/OUT:", 
+                      "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
+                      "CK_LD_FLAGS_EXTRA": "", 
+                      "CK_LIB_EXT": ".lib", 
+                      "CK_MAKE": "nmake", 
+                      "CK_OBJDUMP": "dumpbin /disasm", 
+                      "CK_OBJ_EXT": ".obj"
+                    }, 
+                    "env_script": "env.bat", 
+                    "setup": {
+                      "host_os_uoa": "7a95e0754c37610a", 
+                      "target_os_bits": "64", 
+                      "target_os_uoa": "7a95e0754c37610a", 
+                      "version": "18.00"
+                    }, 
+                    "soft_uoa": "a4c8d6c8e946c49f", 
+                    "tags": [
+                      "64bits", 
+                      "compiler", 
+                      "host-os-windows-64", 
+                      "lang-c", 
+                      "lang-cpp", 
+                      "mcl", 
+                      "target-os-windows-64", 
+                      "v18", 
+                      "v18.00"
+                    ]
+                  }, 
+                  "local": "yes", 
+                  "num_entries": 1, 
+                  "tags": "compiler,mcl,v18.00", 
+                  "uoa": "924e05b4e11f9dcc", 
+                  "ver": "18.00"
+                }
+              }, 
+              "env": {
+                "CK_AR": "lib", 
+                "CK_ASM_EXT": ".asm", 
+                "CK_CC": "icl", 
+                "CK_COMPILER_FLAGS_OBLIGATORY": "/DWINDOWS /GS-", 
+                "CK_COMPILER_FLAG_CPP11": "/Qstd=c++11", 
+                "CK_COMPILER_FLAG_OPENMP": "/openmp", 
+                "CK_COMPILER_FLAG_PTHREAD_LIB": "/pthread", 
+                "CK_COMPILER_FLAG_STD90": "/Qstd=c90", 
+                "CK_COMPILER_FLAG_STD99": "/Qstd=c99", 
+                "CK_CSTD99": "/Qstd=c99", 
+                "CK_CXX": "icl", 
+                "CK_DLL_EXT": ".dll", 
+                "CK_EXE_EXT": ".exe", 
+                "CK_EXTRA_LIB_DL": "", 
+                "CK_EXTRA_LIB_M": "", 
+                "CK_F90": "ifort /fpp", 
+                "CK_F95": "ifort /fpp", 
+                "CK_FC": "ifort /fpp", 
+                "CK_FLAGS_CREATE_ASM": "/Fa /c", 
+                "CK_FLAGS_CREATE_OBJ": "/c", 
+                "CK_FLAGS_DLL": "/MT /DWin /LD /FIwindows.h", 
+                "CK_FLAGS_DLL_EXTRA": "/link /dll", 
+                "CK_FLAGS_DYNAMIC_BIN": "/MD", 
+                "CK_FLAGS_OUTPUT": "/Fe", 
+                "CK_FLAGS_STATIC_BIN": "/MT", 
+                "CK_FLAGS_STATIC_LIB": "/MD", 
+                "CK_FLAG_PREFIX_INCLUDE": "/I", 
+                "CK_FLAG_PREFIX_VAR": "/D", 
+                "CK_LB": "lib", 
+                "CK_LB_OUTPUT": "/OUT:", 
+                "CK_LD_DYNAMIC_FLAGS": "/link /NODEFAULTLIB:LIBCMT", 
+                "CK_LD_FLAGS_EXTRA": "bufferoverflowU.lib", 
+                "CK_LIB_EXT": ".lib", 
+                "CK_MAKE": "nmake", 
+                "CK_OBJDUMP": "dumpbin /disasm", 
+                "CK_OBJ_EXT": ".obj"
+              }, 
+              "env_script": "env.bat", 
+              "package_uoa": "8ec292a541719523", 
+              "setup": {
+                "deps_compiler_mcl": "924e05b4e11f9dcc", 
+                "host_os_uoa": "7a95e0754c37610a", 
+                "target_os_bits": "64", 
+                "target_os_uoa": "7a95e0754c37610a", 
+                "version": "2015"
+              }, 
+              "soft_uoa": "f0e7b534fc84d18a", 
+              "tags": [
+                "64bits", 
+                "compiler", 
+                "host-os-windows-64", 
+                "icc", 
+                "lang-c", 
+                "lang-cpp", 
+                "lang-f77", 
+                "lang-f90", 
+                "lang-f95", 
+                "target-os-windows-64", 
+                "v2015"
+              ]
+            }, 
+            "local": "yes", 
+            "num_entries": 1, 
+            "sort": 10, 
+            "tags": "compiler,lang-c", 
+            "uoa": "289842d618a4e54a", 
+            "ver": "2015"
+          }
+        }, 
+        "env": {
+          "CK_ENV_LIB_RTL_XOPENME_DYNAMIC_NAME": "librtlxopenme.dll", 
+          "CK_ENV_LIB_RTL_XOPENME_INCLUDE_NAME": "xopenme.h", 
+          "CK_ENV_LIB_RTL_XOPENME_STATIC_NAME": "librtlxopenme.lib"
+        }, 
+        "env_script": "env.bat", 
+        "package_uoa": "0573487b8121d094", 
+        "setup": {
+          "deps_compiler": "289842d618a4e54a", 
+          "host_os_uoa": "7a95e0754c37610a", 
+          "target_os_bits": "64", 
+          "target_os_uoa": "7a95e0754c37610a", 
+          "version": "0.3"
+        }, 
+        "soft_uoa": "673507878d649b4a", 
+        "tags": [
+          "64bits", 
+          "host-os-windows-64", 
+          "lang-c", 
+          "lang-cpp", 
+          "lang-f77", 
+          "lang-f90", 
+          "lang-f95", 
+          "lib", 
+          "rtl", 
+          "target-os-windows-64", 
+          "v0", 
+          "v0.3", 
+          "xopenme"
+        ]
+      }, 
+      "local": "yes", 
+      "num_entries": 1, 
+      "sort": 30, 
+      "tags": "lib,xopenme", 
+      "uoa": "919ab8de42d5a9a0", 
+      "ver": "0.3"
+    }, 
+    "lib_opencl": {
+      "bat": "call D:\\Work1\\CK\\ck-repos\\fgg-local-win\\env\\de433cac44b1c0f7\\env.bat\n", 
+      "choices": [
+        "de433cac44b1c0f7"
+      ], 
+      "cus": {
+        "add_include_path": "yes", 
+        "env_prefix": "CK_ENV_LIB_OPENCL", 
+        "include_name": "CL\\opencl.h", 
+        "path_bin": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\bin\\x64", 
+        "path_include": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\include", 
+        "path_install": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6", 
+        "path_lib": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\lib\\x64", 
+        "skip_add_to_ld_path": "yes", 
+        "static_lib": "OpenCL.lib", 
+        "version": "4.6", 
+        "version_int": 406
+      }, 
+      "dict": {
+        "customize": {
+          "add_include_path": "yes", 
+          "env_prefix": "CK_ENV_LIB_OPENCL", 
+          "include_name": "CL\\opencl.h", 
+          "path_bin": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\bin\\x64", 
+          "path_include": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\include", 
+          "path_install": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6", 
+          "path_lib": "C:\\Program Files (x86)\\Intel\\OpenCL SDK\\4.6\\lib\\x64", 
+          "skip_add_to_ld_path": "yes", 
+          "static_lib": "OpenCL.lib", 
+          "version": "4.6", 
+          "version_int": 406
+        }, 
+        "deps": {}, 
+        "env": {
+          "CK_ENV_LIB_OPENCL_DYNAMIC_NAME": "", 
+          "CK_ENV_LIB_OPENCL_INCLUDE_NAME": "CL\\opencl.h", 
+          "CK_ENV_LIB_OPENCL_STATIC_NAME": "OpenCL.lib"
+        }, 
+        "env_script": "env.bat", 
+        "setup": {
+          "host_os_uoa": "7a95e0754c37610a", 
+          "target_os_bits": "64", 
+          "target_os_uoa": "7a95e0754c37610a", 
+          "version": "4.6"
+        }, 
+        "soft_uoa": "b13b6a18695c3675", 
+        "tags": [
+          "64bits", 
+          "host-os-windows-64", 
+          "intel", 
+          "lib", 
+          "opencl", 
+          "target-os-windows-64", 
+          "v4", 
+          "v4.6"
+        ]
+      }, 
+      "local": "yes", 
+      "num_entries": 1, 
+      "sort": 15, 
+      "tags": "lib,opencl", 
+      "uoa": "de433cac44b1c0f7", 
+      "ver": "4.6"
+    }
+  }, 
+  "fail": "no", 
+  "features": {
+    "compiler_version": {
+      "list": [
+        "15", 
+        "0", 
+        "1", 
+        "148"
+      ], 
+      "raw": [
+        "Intel(R) C++ Intel(R) 64 Compiler XE for applications running on Intel(R) 64, Version 15.0.1.148 Build 20141023", 
+        "Copyright (C) 1985-2014 Intel Corporation.  All rights reserved.", 
+        "", 
+        "icl: command line error: no files specified; for help type \"icl /help\"", 
+        ""
+      ], 
+      "str": "15.0.1.148"
+    }
+  }, 
+  "no_platform_features": "yes", 
+  "ready": "yes", 
+  "skip_dataset_copy": "yes", 
+  "speed": "yes", 
+  "state": {
+    "cur_dir": "D:\\Work1\\CK\\ck-repos\\ck-clsmith\\script\\explore-datasets", 
+    "tmp_dir": "tmp"
+  }
+}

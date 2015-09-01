@@ -1,43 +1,33 @@
 {
   "flat_keys": [
     "##choices#data_uoa", 
+    "##choices#dataset_uoa", 
+    "##choices#dataset_file", 
     "##choices#host_os", 
     "##choices#target_os", 
-    "##features#platform#cpu#name", 
-    "##features#platform#cpu#sub_name", 
-    "##features#platform#cpu#num_proc", 
+    "##characteristics#run#run_time_state#opencl_platform", 
     "##characteristics#run#run_time_state#opencl_device", 
     "##characteristics#run#run_time_state#opencl_device_units", 
     "##features#compiler_version#raw@0", 
-    "##choices#cmd_key", 
-    "##choices#dataset_uoa", 
-    "##characteristics#run#run_time_state#input_size_x", 
-    "##characteristics#run#run_time_state#input_size_y", 
-    "##characteristics#run#repeat", 
-    "##choices#run_cmd_key_c", 
-    "##choices#run_cmd_key_r", 
-    "##choices#run_cmd_key_l", 
-    "##choices#run_cmd_key_m", 
-    "##choices#run_cmd_key_y1", 
-    "##choices#run_cmd_key_y2", 
-    "##choices#run_cmd_key_y3", 
-    "##choices#run_cmd_key_v", 
-    "##characteristics#run#fps", 
-    "##characteristics#run#accuracy_ate_max", 
-    "##characteristics#run#run_time_state#energy_a15_mem_gpu", 
-    "##characteristics#run#run_time_state#energy_a7_mem_gpu", 
-    "##characteristics#compile#obj_size", 
-    "##characteristics#current_freq#0", 
-    "##choices#gpu_freq", 
-    "##characteristics#run#faults", 
-    "##choices#compiler_flags#*", 
-    "##choices#compiler_vars#*"
+    "##choices#cmd_key",
+    "##characteristics#run#return_code",
+    "##characteristics#run#run_time_state#positive_results",
+    "##characteristics#run#run_time_state#negative_results"
   ], 
   "flat_keys_desc": [
     {
       "desc": "Program", 
       "module_uoa": "b0ac08fe1d3c2615", 
       "type": "uoa"
+    }, 
+    {
+      "desc": "Dataset UOA", 
+      "module_uoa": "8a7141c59cd335f5", 
+      "type": "uoa"
+    }, 
+    {
+      "desc": "Dataset file", 
+      "type": "text"
     }, 
     {
       "desc": "Host OS", 
@@ -50,19 +40,13 @@
       "type": "uoa"
     }, 
     {
-      "desc": "CPU name"
+      "desc": "OpenCL platform"
     }, 
     {
-      "desc": "CPU sub-name"
+      "desc": "OpenCL device"
     }, 
     {
-      "desc": "CPU logical cores"
-    }, 
-    {
-      "desc": "Accelerator name"
-    }, 
-    {
-      "desc": "Accelerator cores"
+      "desc": "OpenCL cores"
     }, 
     {
       "desc": "Raw compiler name"
@@ -71,75 +55,13 @@
       "desc": "CMD key"
     }, 
     {
-      "desc": "Dataset UOA", 
-      "module_uoa": "8a7141c59cd335f5", 
-      "type": "uoa"
+      "desc": "Run return code"
+    },
+    {
+      "desc": "TBD: Positive results (crowdsourcing)"
     }, 
     {
-      "desc": "Video width"
-    }, 
-    {
-      "desc": "Video height"
-    }, 
-    {
-      "desc": "Calibration"
-    }, 
-    {
-      "desc": "Param c (compute-size-ratio, default 1)"
-    }, 
-    {
-      "desc": "Param r (integration-rate, default 1)"
-    }, 
-    {
-      "desc": "Param l (icp threshold)"
-    }, 
-    {
-      "desc": "Param m (default is 0.1)"
-    }, 
-    {
-      "desc": "Param y1 (pyramid-levels X, default=10)"
-    }, 
-    {
-      "desc": "Param y2 (pyramid-levels Y, default=5)"
-    }, 
-    {
-      "desc": "Param y3 (pyramid-levels Z, default=4)"
-    }, 
-    {
-      "desc": "Param v (volume-resolution, default=256)"
-    }, 
-    {
-      "desc": "FPS", 
-      "format": "%3.1f"
-    }, 
-    {
-      "desc": "Algorithm accuracy", 
-      "format": "%1.3f"
-    }, 
-    {
-      "desc": "Energy total (A15, joules)"
-    }, 
-    {
-      "desc": "Energy total (A7, joules)"
-    }, 
-    {
-      "desc": "Object size (bytes)"
-    }, 
-    {
-      "desc": "CPU freq (MHz)"
-    }, 
-    {
-      "desc": "GPU freq (Hz)"
-    }, 
-    {
-      "desc": "Faults"
-    }, 
-    {
-      "desc": "Compiler flags"
-    }, 
-    {
-      "desc": "Compiler vars", 
-      "view_add_key": "yes"
-    }
+      "desc": "TBD: Negative results (crowdsourcing)"
+    } 
   ]
 }

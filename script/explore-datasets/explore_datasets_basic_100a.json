@@ -21,6 +21,8 @@
 
      "skip_calibration":"yes",
 
+     "generate_rnd_tmp_dir":"yes",
+
      "compile_timeout":60,
      "run_timeout":60
 
