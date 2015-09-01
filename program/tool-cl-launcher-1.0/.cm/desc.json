@@ -1,0 +1,22 @@
+{
+  "run_vars_desc": {
+    "##PLATFORM_ID": {
+      "default": 0, 
+      "desc": "OpenCL platform ID", 
+      "explore_start": 0, 
+      "explore_step": 10, 
+      "explore_stop":1, 
+      "sort": 1, 
+      "type": "integer"
+    },
+    "##DEVICE_ID": {
+      "default": 0, 
+      "desc": "OpenCL device ID", 
+      "explore_start": 0, 
+      "explore_step": 10, 
+      "explore_stop":1, 
+      "sort": 1, 
+      "type": "integer"
+    }
+  }
+}
