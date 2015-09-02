@@ -44,6 +44,12 @@
     "search_point_by_features":"yes"
   },
 
+  "meta":{
+   "experiment_type":"clsmith"
+  },
+
+  "tags":["clsmith", "opencl", "compiler", "bugs"],
+
   "record_dict":{"subview_uoa":"a9143fb9593da7f9"}
 
 }
