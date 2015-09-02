@@ -800,6 +800,8 @@ int parse_file_args(const char* filename) {
 }
 
 int parse_arg(char* arg, char* val) {
+  int ii=0; //FGG
+
   if (!strcmp(arg, "-f") || !strcmp(arg, "--filename")) {
     return 1;
   }
@@ -834,8 +836,8 @@ int parse_arg(char* arg, char* val) {
   }
   if (!strcmp(arg, "-i") || !strcmp(arg, "--include_path")) { //FGG
     include_path = val;
-    for (int i=0; i<strlen(include_path); i++)
-      if (include_path[i]=='\\') include_path[i]='/';
+    for (ii=0; ii<strlen(include_path); ii++)
+      if (include_path[ii]=='\\') include_path[ii]='/';
 
     return 3;
   }
