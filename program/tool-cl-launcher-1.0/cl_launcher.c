@@ -206,7 +206,7 @@ int main(int argc, char **argv) {
 
 //FGG - exposing various params to CK JSON
 #ifdef XOPENME
-  xopenme_init(0,5);
+  xopenme_init(1,5);
 #endif
 
 #ifdef _MSC_VER
