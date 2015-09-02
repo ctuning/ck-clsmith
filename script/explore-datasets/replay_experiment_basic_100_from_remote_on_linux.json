@@ -1,4 +1,7 @@
 {
+  "experiment_repo_uoa":"remote-ck",
+  "remote_repo_uoa":"upload",
+
   "repetitions":1,
 
   "record_original_flat_json":"$#ck_cur_path#$replay_experiment_basic_100_orig.json",
@@ -10,6 +13,10 @@
   "threshold_to_compare":8,
 
   "pipeline_update":{
+     "choices":{
+       "host_os":"windows-64",
+       "target_os":"windows-64"
+     }
    }
 
 }
