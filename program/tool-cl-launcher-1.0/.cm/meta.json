@@ -25,6 +25,7 @@
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
   "main_language": "c", 
   "process_in_tmp": "yes", 
+  "program":"yes",
   "run_cmds": {
     "default": {
       "dataset_tags": [
