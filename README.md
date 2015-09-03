@@ -11,7 +11,7 @@ http://multicore.doc.ic.ac.uk/publications/clsmith-pldi-15.html
 Christopher Lidbury, Andrei Lascu, Nathan Chong, Alastair F. Donaldson
 
 We converted this artifact to CK format (finer-grain and reusable components),
-shared as standard CK repository at GITHUB
+shared it as standard CK repository at GITHUB
 and validated it via experiment crowdsourcing on several machines
 You may see some live results here:
 * http://cknowledge.org/repo/web.php?subview=a9143fb9593da7f9&wcid=bc0409fb61f0aa82:0d9e443249d38187&table_sort=2
