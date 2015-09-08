@@ -32,6 +32,7 @@
 
   "record":"yes",
   "record_uoa":"explore-clsmith-datasets-basic-100",
+
   "record_only_failed":"yes",
 
   "features_keys_to_process":["##choices#*"],
