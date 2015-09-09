@@ -63,6 +63,7 @@ int device_index = 0;
 int platform_index = 0;
 char* device_name_given = "";
 char* include_path = "."; //FGG
+char* output = ""; //FGG
 bool debug_build = false;
 bool disable_opts = false;
 bool disable_fake = false;
@@ -101,9 +102,12 @@ int no_groups = 1;
 int l_dim = 1;
 int g_dim = 1;
 
-char platformName[256]; //FGG - output to CK via OpenMe
-char deviceName[256];   //FGG - output to CK via OpenMe
-int compute_units=0;    //FGG - output to CK via OpenME
+//FGG - output to CK via OpenMe
+char xopenme_tmp[1024]; 
+int xopenme_tmpi=0;
+long xopenme_tmpl=0;
+size_t xopenme_tmpt=0;
+size_t xopenme_tmpt3[3];
 
 int run_on_platform_device(cl_platform_id *, cl_device_id *, cl_uint);
 void 
@@ -125,6 +129,7 @@ void print_help() {
   printf("\n");
   printf("Optional flags are:\n");
   printf("  -i PATH --include_path PATH               Include path for kernels (. by default)\n"); //FGG
+  printf("  -o FILE --output FILE                     Output results to a file\n"); //FGG
   printf("  -b N    --binary N                        Compiles the kernel to binary, allocating N bytes\n");
   printf("  -l N    --locals N                        A string with comma-separated values representing the number of work-units per group per dimension\n");
   printf("  -g N    --groups N                        Same as -l, but representing the total number of work-units per dimension\n");
@@ -206,7 +211,7 @@ int main(int argc, char **argv) {
 
 //FGG - exposing various params to CK JSON
 #ifdef XOPENME
-  xopenme_init(1,5);
+  xopenme_init(1,17);
 #endif
 
 #ifdef _MSC_VER
@@ -380,14 +385,6 @@ int main(int argc, char **argv) {
   }
   platform = &platforms[platform_index];
 
-  //FGG - get platform name to add to CK pipeline
-#ifdef XOPENME
-  err = clGetPlatformInfo(*platform, CL_PLATFORM_VENDOR, sizeof(platformName), platformName, NULL);
-  if (cl_error_check(err, "Get Platform Info error")) return 1;
-
-  xopenme_add_var_s(0, (char*) "  \"opencl_platform\":\"%s\"", platformName);
-#endif
-
   // Find all the GPU devices for the platform.
   cl_device_id * devices = (cl_device_id*)malloc(sizeof(cl_device_id)*(device_index + 1));
   cl_uint device_count;
@@ -418,16 +415,61 @@ int main(int argc, char **argv) {
     }
   }
 
-  //FGG - get device name to add to CK pipeline
+  //FGG - get various OpenCL info to add to CK experiment workflow via XOpenME
 #ifdef XOPENME
-  err = clGetDeviceInfo(*device, CL_DEVICE_NAME, sizeof(deviceName), deviceName, NULL);
-  if (cl_error_check(err, "Get Device Info error")) return 1;
+  err = clGetPlatformInfo(*platform, CL_PLATFORM_NAME, sizeof(xopenme_tmp), &xopenme_tmp, NULL);
+  if (cl_error_check(err, "Get Platform Info error")) return 1;
+  xopenme_add_var_s(0, (char*) "  \"CL_PLATFORM_NAME\":\"%s\"", xopenme_tmp);
 
-  err = clGetDeviceInfo(*device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &compute_units, NULL);
-  if (cl_error_check(err, "Get Device compute units error")) return 1;
+  err = clGetPlatformInfo(*platform, CL_PLATFORM_VENDOR, sizeof(xopenme_tmp), &xopenme_tmp, NULL);
+  if (cl_error_check(err, "Get Platform Info error")) return 1;
+  xopenme_add_var_s(1, (char*) "  \"CL_PLATFORM_VENDOR\":\"%s\"", xopenme_tmp);
 
-  xopenme_add_var_s(1, (char*) "  \"opencl_device\":\"%s\"", deviceName);
-  xopenme_add_var_i(2, (char*) "  \"opencl_device_units\":%u", compute_units);
+  err = clGetPlatformInfo(*platform, CL_PLATFORM_VERSION, sizeof(xopenme_tmp), &xopenme_tmp, NULL);
+  if (cl_error_check(err, "Get Platform Info error")) return 1;
+  xopenme_add_var_s(2, (char*) "  \"CL_PLATFORM_VERSION\":\"%s\"", xopenme_tmp);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_NAME, sizeof(xopenme_tmp), &xopenme_tmp, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_NAME error")) return 1;
+  xopenme_add_var_s(3, (char*) "  \"CL_DEVICE_NAME\":\"%s\"", xopenme_tmp);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_MAX_COMPUTE_UNITS, sizeof(cl_uint), &xopenme_tmpi, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_MAX_COMPUTE_UNITS error")) return 1;
+  xopenme_add_var_i(4, (char*) "  \"CL_DEVICE_MAX_COMPUTE_UNITS\":%u", xopenme_tmpi);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_MAX_CLOCK_FREQUENCY, sizeof(cl_uint), &xopenme_tmpi, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_MAX_CLOCK_FREQUENCY error")) return 1;
+  xopenme_add_var_i(5, (char*) "  \"CL_DEVICE_MAX_CLOCK_FREQUENCY\":%u", xopenme_tmpi);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_GLOBAL_MEM_SIZE, sizeof(cl_ulong), &xopenme_tmpl, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_GLOBAL_MEM_SIZE error")) return 1;
+  xopenme_add_var_i(6, (char*) "  \"CL_DEVICE_GLOBAL_MEM_SIZE\":%u", xopenme_tmpl);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_LOCAL_MEM_SIZE, sizeof(cl_ulong), &xopenme_tmpl, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_LOCAL_MEM_SIZE error")) return 1;
+  xopenme_add_var_i(7, (char*) "  \"CL_DEVICE_LOCAL_MEM_SIZE\":%u", xopenme_tmpl);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(size_t), &xopenme_tmpt, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_MAX_WORK_GROUP_SIZE error")) return 1;
+  xopenme_add_var_i(8, (char*) "  \"CL_DEVICE_MAX_WORK_GROUP_SIZE\":%u", xopenme_tmpt);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS, sizeof(size_t), &xopenme_tmpt, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS error")) return 1;
+  xopenme_add_var_i(9, (char*) "  \"CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS\":%u", xopenme_tmpt);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_MAX_WORK_ITEM_SIZES, sizeof(xopenme_tmpt3), &xopenme_tmpt3, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_MAX_WORK_ITEM_SIZES error")) return 1;
+  xopenme_add_var_i(10, (char*) "  \"CL_DEVICE_MAX_WORK_ITEM_SIZES_0\":%u", xopenme_tmpt3[0]);
+  xopenme_add_var_i(11, (char*) "  \"CL_DEVICE_MAX_WORK_ITEM_SIZES_1\":%u", xopenme_tmpt3[1]);
+  xopenme_add_var_i(12, (char*) "  \"CL_DEVICE_MAX_WORK_ITEM_SIZES_2\":%u", xopenme_tmpt3[2]);
+
+  err = clGetDeviceInfo(*device, CL_DRIVER_VERSION, sizeof(xopenme_tmp), &xopenme_tmp, NULL);
+  if (cl_error_check(err, "Get CL_DRIVER_VERSION error")) return 1;
+  xopenme_add_var_s(13, (char*) "  \"CL_DRIVER_VERSION\":\"%s\"", xopenme_tmp);
+
+  err = clGetDeviceInfo(*device, CL_DEVICE_VENDOR, sizeof(xopenme_tmp), &xopenme_tmp, NULL);
+  if (cl_error_check(err, "Get CL_DEVICE_VENDOR error")) return 1;
+  xopenme_add_var_s(14, (char*) "  \"CL_DEVICE_VENDOR\":\"%s\"", xopenme_tmp);
 #endif
 
   int run_err = run_on_platform_device(platform, device, (cl_uint) l_dim);
@@ -454,10 +496,10 @@ int main(int argc, char **argv) {
   }
 
 #ifdef XOPENME
-  xopenme_dump_state();
+  //FGG - I added it here to avoid loosing info when kernel crashes or times out
   xopenme_finish();
 #endif
-  
+
   return run_err;
 }
 
@@ -536,15 +578,16 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
   if (disable_atomics)
     sprintf(options, "%s -D NO_ATOMICS", options);
 
+//FGG
+#ifdef XOPENME
+  xopenme_add_var_s(15, (char*) "  \"opencl_options\":\"%s\"", options);
+  xopenme_dump_state(); 
+#endif
+
 #ifdef _MSC_VER  
   build_in_progress = true;
 #endif  
   err = clBuildProgram(program, 0, NULL, options, NULL, NULL);
-
-//FGG
-#ifdef XOPENME
-  xopenme_add_var_s(3, (char*) "  \"opencl_options\":\"%s\"", options);
-#endif
 
 #ifdef _MSC_VER  
   build_in_progress = false;
@@ -730,6 +773,11 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
 #ifdef _MSC_VER  
   execution_in_progress = true;
 #endif  
+
+#ifdef XOPENME
+  xopenme_clock_start(0); //FGG: start timing kernel
+#endif
+
   err = clEnqueueNDRangeKernel(
       com_queue, kernel, work_dim, NULL, global_size, local_size, 0, NULL, NULL);
   if (cl_error_check(err, "Error enqueueing kernel"))
@@ -739,6 +787,11 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
   err = clFinish(com_queue);
   if (cl_error_check(err, "Error sending finish command"))
     return 1;
+
+#ifdef XOPENME
+  xopenme_clock_end(0); //FGG: stop timing kernel
+#endif
+
 #ifdef _MSC_VER  
   execution_in_progress = false;
 #endif  
@@ -752,8 +805,11 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
 
   ////
   int i;
+  FILE* out=stdout; //FGG
+  if (strlen(output)>0) out=fopen(output, "w"); //FGG
+
   for (i = 0; i < total_threads; ++i)
-    printf(
+    fprintf(out,
 #ifdef _MSC_VER
     "%I64x,"
 #elif EMBEDDED
@@ -763,6 +819,8 @@ int run_on_platform_device(cl_platform_id *platform, cl_device_id *device, cl_ui
 #endif  
     , c[i]);
 ////
+
+  if (strlen(output)>0) fclose(out); //FGG
 
   free(c);
   
@@ -838,7 +896,10 @@ int parse_arg(char* arg, char* val) {
     include_path = val;
     for (ii=0; ii<strlen(include_path); ii++)
       if (include_path[ii]=='\\') include_path[ii]='/';
-
+    return 3;
+  }
+  if (!strcmp(arg, "-o") || !strcmp(arg, "--output")) { //FGG
+    output = val;
     return 3;
   }
   if (!strcmp(arg, "--atomics")) {

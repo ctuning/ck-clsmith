@@ -1,25 +1,19 @@
 {
   "flat_keys": [
-    "##choices#data_uoa", 
+    "##characteristics#run#return_code",
     "##choices#dataset_uoa", 
     "##choices#dataset_file", 
-    "##choices#host_os", 
     "##choices#target_os", 
-    "##characteristics#run#run_time_state#opencl_platform", 
-    "##characteristics#run#run_time_state#opencl_device", 
-    "##characteristics#run#run_time_state#opencl_device_units", 
-    "##features#compiler_version#raw@0", 
-    "##choices#cmd_key",
-    "##characteristics#run#return_code",
-    "##characteristics#run#run_time_state#positive_results",
-    "##characteristics#run#run_time_state#negative_results"
+    "##characteristics#run#run_time_state#CL_PLATFORM_NAME", 
+    "##characteristics#run#run_time_state#CL_PLATFORM_VERSION", 
+    "##characteristics#run#run_time_state#CL_DEVICE_NAME", 
+    "##characteristics#run#run_time_state#CL_DRIVER_VERSION", 
+    "##characteristics#run#run_time_state#CL_DEVICE_MAX_COMPUTE_UNITS" 
   ], 
   "flat_keys_desc": [
     {
-      "desc": "Program", 
-      "module_uoa": "b0ac08fe1d3c2615", 
-      "type": "uoa"
-    }, 
+      "desc": "Failed?"
+    },
     {
       "desc": "Dataset UOA", 
       "module_uoa": "8a7141c59cd335f5", 
@@ -30,38 +24,24 @@
       "type": "text"
     }, 
     {
-      "desc": "Host OS", 
+      "desc": "OS", 
       "module_uoa": "0440cb72c2bc5cc6", 
       "type": "uoa"
     }, 
     {
-      "desc": "Target OS", 
-      "module_uoa": "0440cb72c2bc5cc6", 
-      "type": "uoa"
+      "desc": "OpenCL platform name"
     }, 
     {
-      "desc": "OpenCL platform"
+      "desc": "OpenCL platform version"
     }, 
     {
-      "desc": "OpenCL device"
+      "desc": "OpenCL device name"
+    }, 
+    {
+      "desc": "OpenCL driver version"
     }, 
     {
       "desc": "OpenCL cores"
-    }, 
-    {
-      "desc": "Raw compiler name"
-    }, 
-    {
-      "desc": "CMD key"
-    }, 
-    {
-      "desc": "Run return code"
-    },
-    {
-      "desc": "TBD: Positive results (crowdsourcing)"
-    }, 
-    {
-      "desc": "TBD: Negative results (crowdsourcing)"
     } 
   ]
 }

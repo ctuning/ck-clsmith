@@ -1,0 +1,6 @@
+* 2015.09.09 FGG: * adding new data sets (by Andrei)
+                  * many improvements to OpenCL launcher
+
+* 2015.09.08 FGG: * adding infinite loop to exploration
+                  * adding output to file in OpenCL launcher
+                  * adding convertion to JSON vector from OpenCL launcher

@@ -39,7 +39,7 @@
         "post_process_cmds": [
           "python $#src_path_local#$ck_postprocess.py" 
         ],
-        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<PLATFORM_ID>>$ -d $<<DEVICE_ID>>$ -i $#src_path#$ ---debug", 
+        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<PLATFORM_ID>>$ -d $<<DEVICE_ID>>$ -i $#src_path#$ -o tmp-output.txt ---debug", 
         "run_cmd_out1": "", 
         "run_cmd_out2": "", 
         "run_correctness_output_files": [], 
@@ -47,7 +47,7 @@
           "CLSmith.h"
         ], 
         "run_output_files": [
-          "tmp-output.tmp", 
+          "tmp-output.txt", 
           "tmp-ck-timer.json"
         ]
       }

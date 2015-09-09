@@ -26,14 +26,15 @@
 
    },
 
-  "seed":12345,
-  "iterations":1000,
+  "iterations":-1,
   "repetitions":1,
 
   "record":"yes",
   "record_uoa":"explore-clsmith-datasets-basic-100",
 
-  "record_only_failed":"yes",
+  "record_failed":"yes",
+
+  "skip_stat_analysis":"yes",
 
   "features_keys_to_process":["##choices#*"],
 
