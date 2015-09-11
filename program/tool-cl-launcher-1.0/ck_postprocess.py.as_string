@@ -57,6 +57,46 @@ if exists:
 
          d['result_string']=s
 
+# Try to read stdout
+exists=True
+try:
+  f=open('tmp-stdout.tmp', 'r')
+except Exception as e:
+  exists=False
+  pass
+
+if exists:
+   try:
+     s=f.read()
+   except Exception as e:
+     exists=False
+     pass
+
+   if exists:
+      f.close()
+
+      d['stdout']=s
+
+# Try to read stdout
+exists=True
+try:
+  f=open('tmp-stderr.tmp', 'r')
+except Exception as e:
+  exists=False
+  pass
+
+if exists:
+   try:
+     s=f.read()
+   except Exception as e:
+     exists=False
+     pass
+
+   if exists:
+      f.close()
+
+      d['stderr']=s
+
 # Write CK json
 f=open('tmp-ck-timer.json','wt')
 f.write(json.dumps(d, indent=2, sort_keys=True)+'\n')

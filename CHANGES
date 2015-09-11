@@ -1,3 +1,5 @@
+* 2015.09.11 FGG: * adding stdout and stderr redirect 
+
 * 2015.09.09 FGG: * adding new data sets (by Andrei)
                   * many improvements to OpenCL launcher
 
