@@ -1,5 +1,18 @@
-# CK repository: Converting clsmith tool (PLDI'15 artifact) to CK format
+CK repository: Converting clsmith tool (PLDI'15 artifact) to CK format
+======================================================================
 
+Status
+======
+This is a relatively stable repository demonstrating how to share
+artifacts (tools and datasets) via CK. We converted CLSmith tool
+to CK format to detect OpenCL compiler bugs.
+
+Prerequisites
+=============
+* Collective Knowledge Framework: http://github.com/ctuning/ck
+
+Description
+===========
 CLsmith is a tool designed to address the compiler correctness problem 
 for many-core systems through novel applications of fuzz testing to 
 OpenCL compilers. It was shared as artifact along with the following
@@ -24,3 +37,8 @@ and share other artifacts in CK format along with publications:
 * AE PPoPP 2016: http://cTuning.org/event/ae-ppopp2016
 * AE CGO 2016: http://cTuning.org/event/ae-cgo2016
 * ADAPT 2016: http://adapt-workshop.org
+
+Installation
+============
+
+> ck pull repo:ck-clsmith
