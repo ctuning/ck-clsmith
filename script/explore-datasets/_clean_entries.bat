@@ -1,1 +1,1 @@
-ck rm experiment:explore-clsmith-datasets-*
+ck rm experiment:explore-clsmith-datasets-any

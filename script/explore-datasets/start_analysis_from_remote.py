@@ -17,8 +17,7 @@ ii={"action":"get",
     "remote_repo_uoa":"upload",
 
     "data_uoa_list":[
-      "explore-clsmith-datasets-basic-100", 
-      "explore-clsmith-datasets-vector-100"
+      "explore-clsmith-datasets-any" 
     ],
     "flat_keys_list":[
       "##choices#data_uoa", 

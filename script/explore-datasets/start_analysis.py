@@ -13,8 +13,7 @@ ii={"action":"get",
     "module_uoa":"experiment",
 
     "data_uoa_list":[
-      "explore-clsmith-datasets-basic-100", 
-      "explore-clsmith-datasets-vector-100"
+      "explore-clsmith-datasets-any" 
     ],
 
     "flat_keys_list":[
