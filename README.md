@@ -1,11 +1,11 @@
-CK repository: Converting clsmith tool (PLDI'15 artifact) to CK format
+CK repository: Converting CLsmith tool (PLDI'15 artifact) to CK format
 ======================================================================
 
 Status
 ======
 This is a relatively stable repository demonstrating how to share
-artifacts (tools and datasets) via CK. We converted CLSmith tool
-to CK format to detect OpenCL compiler bugs.
+artifacts (tools and datasets) via CK. We converted CLsmith tool
+for fuzz testing of OpenCL compilers into the CK format.
 
 Prerequisites
 =============
@@ -24,9 +24,9 @@ http://multicore.doc.ic.ac.uk/publications/clsmith-pldi-15.html
 Christopher Lidbury, Andrei Lascu, Nathan Chong, Alastair F. Donaldson
 
 We converted this artifact to CK format (finer-grain and reusable components),
-shared it as standard CK repository at GITHUB
+shared it as standard CK repository on GitHub
 and validated it via experiment crowdsourcing on several machines.
-You may see some live results here:
+You can see some live results here:
 * http://cknowledge.org/repo/web.php?subview=a9143fb9593da7f9&wcid=bc0409fb61f0aa82:0d9e443249d38187&table_sort=2
 
 We also added this example to CK "Getting Started Guide" here:
