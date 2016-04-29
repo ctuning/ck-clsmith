@@ -10,28 +10,6 @@
       "sort": 10, 
       "tags": "compiler,lang-c"
     }, 
-    "lib.xopenme": {
-      "local": "yes", 
-      "name": "xOpenME library", 
-      "sort": 30, 
-      "tags": "lib,xopenme"
-    }, 
-    "lib_opencl": {
-      "local": "yes", 
-      "name": "OpenCL library", 
-      "sort": 15, 
-      "tags": "lib,opencl"
-    }
-  }, 
-  "compiler_env": "CK_CC", 
-  "data_name": "cl-launcher-1.0", 
-  "deps": {
-    "compiler": {
-      "local": "yes", 
-      "name": "C++ compiler", 
-      "sort": 10, 
-      "tags": "compiler,lang-c"
-    }, 
     "lib-opencl": {
       "local": "yes", 
       "name": "OpenCL library", 
@@ -45,6 +23,8 @@
       "tags": "lib,xopenme"
     }
   }, 
+  "compiler_env": "CK_CC", 
+  "data_name": "cl-launcher-1.0", 
   "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
   "main_language": "c", 
   "process_in_tmp": "yes", 
