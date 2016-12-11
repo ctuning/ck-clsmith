@@ -1,3 +1,7 @@
+* 2016.12.11 FGG: * major update (to support auto select of GPGPU,
+                    simplification of pipeline, dashboard, integration
+                    with CK crowd-optimizer)
+
 * 2015.09.22 FGG: * removing outdated scripts to explore datasets
 
 * 2015.09.11 FGG: * adding stdout and stderr redirect 

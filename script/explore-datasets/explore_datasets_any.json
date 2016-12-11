@@ -20,7 +20,7 @@
      "skip_calibration":"yes",
 
      "compile_timeout":60,
-     "run_timeout":1
+     "run_timeout":60
 
    },
 

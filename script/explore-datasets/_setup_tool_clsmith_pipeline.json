@@ -12,8 +12,6 @@
  "gpu_freq":"max",
 
  "env":{
-   "PLATFORM_ID":"0",
-   "DEVICE_ID":"0"
  },
 
  "compile_only_once":"yes",
