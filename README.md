@@ -46,7 +46,7 @@ We provided usage scenario in the CK documentation [here](https://github.com/ctu
 
 Crowd-results
 =============
-You can see live results [here](http://cknowledge.org/repo/web.php?subview=a9143fb9593da7f9&wcid=bc0409fb61f0aa82:0d9e443249d38187&table_sort=2)
+You can see failed OpenCL kernels [here](http://cknowledge.org/repo/web.php?template=cknowledge&wcid=bc0409fb61f0aa82:1b437e72c74fe782&table_sort=2)
 
 Publications
 ============
