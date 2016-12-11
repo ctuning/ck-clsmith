@@ -45,3 +45,14 @@ Quick installation
 $ sudo pip install ck
 $ ck pull repo:ck-clsmith
 ```
+
+Publications
+============
+
+* http://multicore.doc.ic.ac.uk/publications/clsmith-pldi-15.html
+* https://arxiv.org/abs/1506.06256
+
+Testimonials and awards
+=======================
+* 2016: HiPEAC technology transfer award for CK-powered CLsmith: [HiPEAC TT winners](https://www.hipeac.net/research/technology-transfer-awards/2016)
+
