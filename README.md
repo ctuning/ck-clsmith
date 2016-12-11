@@ -29,8 +29,7 @@ and validated it via experiment crowdsourcing on several machines.
 
 CLsmith converted to CK can also serve as a template to describe 
 and share other artifacts in CK format along with publications:
-* AE PPoPP 2016: http://cTuning.org/event/ae-ppopp2016
-* AE CGO 2016: http://cTuning.org/event/ae-cgo2016
+* Artifact Evaluation for PPoPP/CGO/PACT conferences: http://cTuning.org/ae
 * ADAPT 2016: http://adapt-workshop.org
 
 Quick installation
