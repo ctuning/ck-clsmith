@@ -38,11 +38,12 @@
       ], 
       "ignore_return_code": "no", 
       "run_time": {
+        "need_compute_device": "opencl",
         "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
           "python $#src_path_local#$ck_postprocess.py"
         ], 
-        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<PLATFORM_ID>>$ -d $<<DEVICE_ID>>$ -i $#src_path#$ -o tmp-output.txt ---debug", 
+        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<CK_COMPUTE_PLATFORM_ID>>$ -d $<<CK_COMPUTE_DEVICE_ID>>$ -i $#src_path#$ -o tmp-output.txt ---debug", 
         "run_cmd_out1": "tmp-stdout.tmp", 
         "run_cmd_out2": "tmp-stderr.tmp", 
         "run_correctness_output_files": [], 
@@ -55,10 +56,6 @@
         ]
       }
     }
-  }, 
-  "run_vars": {
-    "DEVICE_ID": 0, 
-    "PLATFORM_ID": 0
   }, 
   "source_files": [
     "cl_launcher.c"

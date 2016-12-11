@@ -30,7 +30,7 @@ You can see some live results here:
 * http://cknowledge.org/repo/web.php?subview=a9143fb9593da7f9&wcid=bc0409fb61f0aa82:0d9e443249d38187&table_sort=2
 
 We also added this example to CK "Getting Started Guide" here:
-* https://github.com/ctuning/ck/wiki/Getting_started_guide_clsmith
+* https://github.com/ctuning/ck/wiki/Autotuning-example-clsmith
 
 CLsmith converted to CK can also serve as a template to describe 
 and share other artifacts in CK format along with publications:
@@ -38,7 +38,10 @@ and share other artifacts in CK format along with publications:
 * AE CGO 2016: http://cTuning.org/event/ae-cgo2016
 * ADAPT 2016: http://adapt-workshop.org
 
-Installation
+Quick installation
 ============
 
-> ck pull repo:ck-clsmith
+```
+$ sudo pip install ck
+$ ck pull repo:ck-clsmith
+```
