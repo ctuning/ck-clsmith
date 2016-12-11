@@ -44,9 +44,15 @@ Usage
 =====
 We provided usage scenario in the CK documentation [here](https://github.com/ctuning/ck/wiki/Autotuning-example-clsmith).
 
+You can see local results via CK dashboard:
+```
+ $ ck dashboard opencl-bug
+```
+
 Crowd-results
 =============
-You can see failed OpenCL kernels [here](http://cknowledge.org/repo/web.php?template=cknowledge&wcid=bc0409fb61f0aa82:1b437e72c74fe782&table_sort=2)
+You can see failed OpenCL kernels in the [live CK repository](http://cknowledge.org/repo/web.php?template=cknowledge&wcid=bc0409fb61f0aa82:1b437e72c74fe782&table_sort=2).
+Simply select "crowd-test OpenCL compilers" scenario!
 
 Publications
 ============
