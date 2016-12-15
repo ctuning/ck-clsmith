@@ -1,5 +1,5 @@
 #
-# Collective Knowledge (CK wrapper for OpenGL bug reports from Imperial)
+# Collective Knowledge (CK wrapper for OpenCL bug reports from Imperial)
 #
 # Developer: Grigori Fursin, Grigori.Fursin@cTuning.org, http://fursin.net
 #
@@ -92,7 +92,7 @@ def show(i):
 
     h='<center>\n'
 
-    h+='<h2>Aggregated results for OpenGL compiler bugs</h2>\n'
+    h+='<h2>Aggregated results for OpenCL compiler bugs</h2>\n'
 
     h+='<br><br>'
 

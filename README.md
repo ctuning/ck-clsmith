@@ -32,6 +32,11 @@ and share other artifacts in CK format along with publications:
 * Artifact Evaluation for PPoPP/CGO/PACT conferences: http://cTuning.org/ae
 * ADAPT 2016: http://adapt-workshop.org
 
+This repository also serves as an SDK to let you implement high-level scenarios 
+to detect and classify bugs, and to enable further research opportunities 
+by analyzing collected knowledge.
+
+
 Quick installation
 ============
 
@@ -42,9 +47,11 @@ $ ck pull repo:ck-clsmith
 
 Usage
 =====
-We provided usage scenario in the CK documentation [here](https://github.com/ctuning/ck/wiki/Autotuning-example-clsmith).
+We provided a very basic usage scenario to compile multiple OpenCL kernels,
+run them, detect if there is a bug, and record raw info in the [public CK repos](http://cknowledge.org/repo).
+This scenario is described in the CK documentation [here](https://github.com/ctuning/ck/wiki/Autotuning-example-clsmith).
 
-You can see local results via CK dashboard:
+You can see raw local results via CK dashboard:
 ```
  $ ck dashboard opencl-bug
 ```
