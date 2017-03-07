@@ -1,6 +1,10 @@
 CK repository: Converting CLsmith tool (PLDI'15 artifact) to CK format
 ======================================================================
 
+[![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-powered-by-ck.png)](http://cKnowledge.org)
+[![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-validated-by-the-community-simple.png)](http://cTuning.org)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 Status
 ======
 This is a relatively stable repository demonstrating how to share
@@ -70,5 +74,3 @@ Publications
 Testimonials and awards
 =======================
 * 2016: HiPEAC technology transfer award for CK-powered CLsmith: [HiPEAC TT winners](https://www.hipeac.net/research/technology-transfer-awards/2016)
-
-![logo](https://github.com/ctuning/ck-guide-images/blob/master/logo-validated-by-the-community-simple.png)
