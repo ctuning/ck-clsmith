@@ -42,10 +42,21 @@ by analyzing collected knowledge.
 
 
 Quick installation
-============
+==================
+
+First install CK:
 
 ```
 $ sudo pip install ck
+
+  or
+
+$ git clone http://github.com/ctuning/ck
+$ export PATH=$PWD/ck/bin:$PATH
+```
+
+Then pull ck-clsmith repository:
+```
 $ ck pull repo:ck-clsmith
 ```
 
