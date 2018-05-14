@@ -51,8 +51,9 @@ $ sudo pip install ck
 
   or
 
-$ git clone http://github.com/ctuning/ck
-$ export PATH=$PWD/ck/bin:$PATH
+$ git clone http://github.com/ctuning/ck ck-master
+$ export PATH=$PWD/ck-master/bin:$PATH
+$ export PYTHONPATH=$PWD/ck-master:$PYTHONPATH
 ```
 
 Then pull ck-clsmith repository:
