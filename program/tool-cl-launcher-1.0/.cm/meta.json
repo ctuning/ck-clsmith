@@ -1,73 +1,73 @@
 {
-  "backup_data_uid": "4eca01a57df4dfb2", 
+  "backup_data_uid": "4eca01a57df4dfb2",
   "build_compiler_vars": {
     "XOPENME": "1"
-  }, 
+  },
   "compile_deps": {
     "compiler": {
-      "local": "yes", 
-      "name": "C++ compiler", 
-      "sort": 10, 
+      "local": "yes",
+      "name": "C++ compiler",
+      "sort": 10,
       "tags": "compiler,lang-c"
-    }, 
+    },
     "lib-opencl": {
-      "local": "yes", 
-      "name": "OpenCL library", 
-      "sort": 15, 
+      "local": "yes",
+      "name": "OpenCL library",
+      "sort": 15,
       "tags": "lib,opencl"
-    }, 
+    },
     "lib-xopenme": {
-      "local": "yes", 
-      "name": "xOpenME library", 
-      "sort": 30, 
+      "local": "yes",
+      "name": "xOpenME library",
+      "sort": 30,
       "tags": "lib,xopenme"
     }
-  }, 
-  "compiler_env": "CK_CC", 
-  "data_name": "cl-launcher-1.0", 
-  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$", 
-  "main_language": "c", 
-  "process_in_tmp": "yes", 
-  "program": "yes", 
+  },
+  "compiler_env": "CK_CC",
+  "data_name": "cl-launcher-1.0",
+  "extra_ld_vars": "$<<CK_EXTRA_LIB_M>>$",
+  "main_language": "c",
+  "process_in_tmp": "yes",
+  "program": "yes",
   "run_cmds": {
     "default": {
       "dataset_tags": [
-        "dataset", 
-        "clsmith", 
+        "dataset",
+        "clsmith",
         "opencl kernel"
-      ], 
-      "ignore_return_code": "no", 
+      ],
+      "ignore_return_code": "no",
       "run_time": {
+        "fine_grain_timer_file": "tmp-ck-timer.json",
         "need_compute_device": "opencl",
-        "fine_grain_timer_file": "tmp-ck-timer.json", 
         "post_process_cmds": [
           "python $#src_path_local#$ck_postprocess.py"
-        ], 
-        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<CK_COMPUTE_PLATFORM_ID>>$ -d $<<CK_COMPUTE_DEVICE_ID>>$ -i $#src_path#$ -o tmp-output.txt ---debug", 
-        "run_cmd_out1": "tmp-stdout.tmp", 
-        "run_cmd_out2": "tmp-stderr.tmp", 
-        "run_correctness_output_files": [], 
+        ],
+        "run_cmd_main": "$#BIN_FILE#$ -f $#dataset_path#$$#dataset_filename#$ -p $<<CK_COMPUTE_PLATFORM_ID>>$ -d $<<CK_COMPUTE_DEVICE_ID>>$ -i $#src_path#$ -o tmp-output.txt ---debug",
+        "run_cmd_out1": "tmp-stdout.tmp",
+        "run_cmd_out2": "tmp-stderr.tmp",
+        "run_correctness_output_files": [],
         "run_input_files": [
           "CLSmith.h"
-        ], 
+        ],
         "run_output_files": [
-          "tmp-output.txt", 
+          "tmp-output.txt",
           "tmp-ck-timer.json"
         ]
       }
     }
-  }, 
+  },
   "source_files": [
     "cl_launcher.c"
-  ], 
-  "species": [], 
+  ],
+  "species": [],
   "tags": [
-    "opencl", 
-    "program", 
-    "clsmith", 
-    "v1.0", 
-    "v1", 
+    "opencl",
+    "program",
+    "clsmith",
+    "v1.0",
+    "v1",
     "lang-c"
-  ], 
+  ],
   "target_file": "cl_launcher"
 }
